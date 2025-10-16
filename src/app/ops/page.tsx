@@ -9,9 +9,9 @@ const page = () => {
   });
 
   return (
-    <>
+    <React.Fragment>
       <input ref={inputRef} type="text" placeholder="Enter a value" />
-    </>
+    </React.Fragment>
   );
 };
 
