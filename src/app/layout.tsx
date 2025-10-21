@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { StrictMode } from "react";
+import { Lexend_Deca } from "next/font/google";
 
+const lexendDeca = Lexend_Deca({
+  subsets: ["latin"], // required
+  weight: ["400", "500", "700"], // optional, include weights you need
+  display: "swap", // optional
+});
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,7 +32,8 @@ export default function RootLayout({
   return (
     <html>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lexendDeca.className} antialiased m-5 sm:m-15`}
       >
         {children}
       </body>
