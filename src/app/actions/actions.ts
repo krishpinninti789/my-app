@@ -1,5 +1,7 @@
 "use server";
 
+import { NextResponse } from "next/server";
+
 export async function submitForm(prevState: any, formData: FormData) {
   const inputId = formData.get("id") as string;
 
@@ -10,4 +12,10 @@ export async function submitForm(prevState: any, formData: FormData) {
     status: 200,
     redirectId: inputId, // optional, if you want to redirect based on input
   };
+}
+
+export async function getAllProducts() {
+  const products = await fetch("https://dummyjson.com/products");
+  const data = await products.json();
+  return data.products;
 }
